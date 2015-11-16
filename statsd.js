@@ -40,9 +40,7 @@ StatsD.prototype.append = function() {
 
   buffer.push.apply(buffer, arguments);
 
-  if (buffer.length && isStackEmpty) {
-    this.send(buffer.join('\n'));
-  }
+  this.send(buffer.join('\n'));
 };
 
 StatsD.prototype.close = function() {
